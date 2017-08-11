@@ -1,0 +1,28 @@
+.registration, .login {
+  display: inline-block;
+  vertical-align: top;
+  border: 2px solid gray;
+  width: 400px;
+  padding: 20px;
+
+}
+body{
+    background-color: lightblue;
+}
+input {
+  display: block;
+  font-size: 16px;
+}
+form {
+  font-size: 16px;
+  font-weight: bold;
+}
+.login {
+  margin-left: 200px;
+}
+#comment {
+  border: 2px border blue;
+}
+.posts {
+  background-color: lightblue;
+}

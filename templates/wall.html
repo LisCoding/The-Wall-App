@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content%}
+<h1>Welcome to your Wall!</h1>
+<h2>ready to post?</h2>
+<h3>Post a message</h3>
+<form class="" action="/wall/message" method="post">
+  <textarea name="content"></textarea>
+  <input type="submit" name="" value="Post a message">
+</form>
+<div class="posts">
+  {% for post in posts: %}
+    <p>{{ post['post_author_full_name']}} {{post['date']}}</p>
+    <p><b>{{ post['post'] }}</b></p>
+      {% for c in post['comment']: %}
+      <p>{{ c['body'] }}-<i>{{ c['author'] }} / {{c['comment_date']}} </i></p>
+      {% endfor %}
+    <hr>
+    <form  action="/wall/comment/{{post['id']}}" method="post">
+      <textarea id="comment" name="content"></textarea>
+      <input type="submit" name="" value="Comment">
+    </form>
+  {% endfor %}
+</div>
+{%endblock%}

@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content%}
+<div class="content">
+  <h1>Welcome!</h1>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <div class="registration">
+    <h1>Registration Form</h1>
+    <h3>All fiels are required</h3>
+    <form class="" action="/register" method="post">
+      Firt Name<input type="text" name="f_name" value="">
+      Last Name<input type="text" name="l_name" value="">
+      Email<input type="text" name="email" value="">
+      Password<input type="password" name="pwd" value="">
+      Confirm Password<input type="password" name="confi_pwd" value="">
+      <input type="submit" name="" value="Register">
+    </form>
+  </div>
+  <div class="login">
+    <h1>login</h1>
+    <form class="" action="/login" method="post">
+      email<input type="text" name="email" value="">
+      password<input type="password" name="pwd" value="">
+      <input type="submit" name="" value="Login in">
+    </form>
+  </div>
+</div>
+{%endblock%}
